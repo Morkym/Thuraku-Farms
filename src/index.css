@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Base Colors */
+  --color-soil-brown: #6A5D4D;        /* Muted cool brown, grounding tone */
+  --color-soil-dark: #4A4035;         /* Deep earthy tone for nav or footers */
+  --color-text-light: #F2F1ED;        /* Gentle off-white for readability */
+  --color-card-bg: #F9F8F6;           /* Soft cream-white for blocks */
+  --color-sand-beige: #D9CFC1;        /* Light tan, modern organic neutral */
+
+  /* Brand Greens (Cool & Fresh) */
+  --color-farm-green: #3A715F;        /* Cool organic green, brand primary */
+  --color-leaf-green: #A9DAB1;        /* Soft pastel green, fresh and modern */
+  --color-sprout-mint: #D3F2DD;       /* Extra light mint for highlights */
+
+  /* Accent Colors */
+  --color-highlight-amber: #FFB85F;   /* Subtle orange for buttons, icons */
+  --color-soft-citrus: #FFEBC7;       /* Light citrus tone for soft accents */
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-black: #1D1D1D;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ background-image:linear-gradient(to left, var(--color-farm-green), var(--color-soil-dark));
+  color: var(--color-text-light);
+  font-family: "Karla", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+@theme {
+  
+  /* Base Backgrounds */
+  --color-soil-brown: #F9F8F6;       /* Main background – soft, natural */
+  --color-soil-dark: #D9CFC1;        /* Sections, nav background, subtle contrast */
+  --color-text-light: #1D1D1D;       /* Body text on light background */
+  --color-card-bg: #FFFFFF;          /* Cards, white blocks */
+  --color-sand-beige: #E8E2D6;       /* Alternate sections or borders */
+
+  /* Brand Greens */
+  --color-farm-green: #3A715F;       /* Headings, buttons, links */
+  --color-leaf-green: #A9DAB1;       /* Hover accents, icons */
+  
+  /* Accents */
+  --color-highlight-orange: #FFB85F; /* Call-to-actions, badges */
+  --color-lemon-yellow: #FFEBC7;     /* Subtle alerts, highlights */
+
+  /* Fonts */
+  --font-paragraph: 'Karla', sans-serif;
+  --font-heading: 'Bree Serif', serif;
+}
+
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+  .abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .general-title {
+    @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw];
+  }
+}
+@layer components {
+ .hero-container {
+    @apply relative  w-screen h-dvh overflow-hidden;
+  }
+  .hero-title {
+    @apply text-[var(--color-text-light)] 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold uppercase leading-[9vw] tracking-[-.35vw] 2xl:mb-0 mb-5 shadow-[0_2px_10px_rgba(0,0,0,0.3)] text-center;
+  }
+  
+  .hero-subtitle {
+    @apply text-2xl md:text-3xl font-light mb-12;
+  }
+  .hero-button {
+    @apply bg-[var(--color-farm-green)] text-white px-6 py-3 rounded-lg hover:bg-[var(--color-leaf-green)] transition-colors duration-300;
+  }
+}
