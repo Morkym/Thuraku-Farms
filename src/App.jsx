@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger,ScrollSmoother } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import About from './sections/About';
-/*gsap.registerPlugin(scrollTrigger,scrollTrigger);*/
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 function App() {
   
