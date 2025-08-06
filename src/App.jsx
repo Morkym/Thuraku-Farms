@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger,ScrollSmoother } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import About from './sections/About';
+import Farm from './sections/Farm';
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <main>
       <Hero />
       <About />
+      <Farm />
 
       
     </main>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -32,7 +33,9 @@ body {
   box-sizing: border-box;
  background-image:linear-gradient(to left, var(--color-farm-green), var(--color-soil-dark));
   color: var(--color-text-light);
-  font-family: "Karla", sans-serif;
+  font-family: "Karla", sans-serif,
+    "Bree Serif", serif,
+    "Caveat", cursive;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
@@ -63,6 +66,7 @@ body::-webkit-scrollbar {
   /* Fonts */
   --font-paragraph: 'Karla', sans-serif;
   --font-heading: 'Bree Serif', serif;
+  --font-subheading: 'Caveat', cursive;
 }
 
 
@@ -85,7 +89,7 @@ body::-webkit-scrollbar {
     @apply relative  w-screen h-dvh overflow-hidden;
   }
   .hero-title {
-    @apply text-[var(--color-text-light)] 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold uppercase leading-[9vw] tracking-[-.35vw] 2xl:mb-0 mb-5 shadow-[0_2px_10px_rgba(0,0,0,0.3)] text-center;
+    @apply 2xl:text-[8.5rem] md:text-[5.5rem] text-[2.4rem] font-bold uppercase leading-[9vw] tracking-[0.5vw] 2xl:mb-0 mb-5 shadow-[0_2px_10px_rgba(0,0,0,0.3)] text-center;
   }
   
   .hero-subtitle {
@@ -94,4 +98,24 @@ body::-webkit-scrollbar {
   .hero-button {
     @apply bg-[var(--color-farm-green)] text-white px-6 py-3 rounded-lg hover:bg-[var(--color-leaf-green)] transition-colors duration-300;
   }
+  .about-container {
+   @apply 2xl:text-[8.5rem] md:text-8xl text-5xl   leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-8 gap-5;
+  }
+  .about-section {
+    @apply relative z-20 flex  items-center justify-center  bg-[var(--color-soil-dark)] text-[var(--color-text-light)] min-h-dvh overflow-hidden;
+  }
+  .msg-wrapper {
+      @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-tight tracking-[-.12vw] flex flex-col justify-center items-center md:gap-24 gap-14;
+ }
+ h1 {
+      @apply uppercase text-[8.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
+    }
+  p {
+      @apply font-paragraph text-center text-lg md:text-xl text-[var(--color-text-light)] max-w-3xl px-4;
+    }
+    .msg-text-scroll {
+      @apply absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden;
+
+    }
 }
+

@@ -38,7 +38,25 @@ const Hero = () => {
       y: 10,
       duration: 0.6,
     }, '-=0.6');
+  
+
+  const heroTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.hero-container',
+      start: '1% top',
+      end: 'bottom top',
+      scrub: true,
+    
+    }
   });
+  heroTl.to('.hero-container', {
+    rotate: 7,
+    scale: 0.9,
+    yPercent: 30,
+    ease: 'power1.inOut',
+  })
+  }, []); // <-- Add closing brace and dependency array for useGSAP
+
      return (
     <section className='relative hero-container flex flex-col items-center justify-center text-center p-8'>
         <video className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -49,12 +67,14 @@ const Hero = () => {
         playsInline/>
         <div className="hero-overlay absolute inset-0 bg-black opacity-40 z-10"></div>
         <div className="text-container relative col-center z-20">
-           <div className="hero-title relative z-20">Thuraku Farms</div>
+           <div className="hero-title relative z-20 font-heading">Thuraku Farms</div>
         <div
         style={{clipPath: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)'}}
-         className="hero-subtitle relative z-20 bg-soil-dark text-highlight-orange text-7xl rotate-[-5deg] border-sand-beige border-2">Fresh+Organic</div>
+         className="hero-subtitle relative z-20 bg-soil-dark text-highlight-orange text-5xl md:text-6xl rotate-[-5deg] border-sand-beige border-2">
+          Fresh+Organic
+        </div>
         <div className=" relative z-20 col-center">
-          <p  className="text-sand-beige text-xl text-center max-w-xl mx-auto px-4 py-2 leading-relaxed">
+          <p  className= "text-sand-beige text-2xl text-center max-w-xl mx-auto px-4 py-2 leading-relaxed">
               
                 Straight from our farm to your fork — Thuraku Farms brings you the freshest, tastiest produce around. No fuss, just good vibes and great veggies!
             </p>
@@ -68,4 +88,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
